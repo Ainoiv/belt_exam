@@ -1,0 +1,37 @@
+<h1>Bid Now!</h1>
+<div>
+    <a href="/logout">Log out</a>
+    <table>
+
+        <form (submit)="bid()">
+            <tr>
+                <th>Product 1
+                    <input type="text" name="bid1" [(ngModel)]="new_bid.bid1" placeholder="Enter bid here">
+                    <input type="submit" value="Bid"></th>
+                <th>Product 2
+                    <input type="text" name="bid2" [(ngModel)]="new_bid.bid2" placeholder="Enter bid here">
+                    <input type="submit" value="Bid"></th>
+                <th>Product 3
+                    <input type="text" name="bid3" [(ngModel)]="new_bid.bid3" placeholder="Enter bid here">
+                    <input type="submit" value="Bid"></th>
+            </tr>
+        </form>
+
+    </table>
+</div>
+<div id="bidboard">
+    <table>
+        <tr>
+            <th>Current Bids:</th>
+            <th>Current Bids:</th>
+            <th>Current Bids:</th>
+
+        </tr>
+        <tr *ngFor="let bid of bids">
+            <td>{{ bid.bid1 }}</td>
+            <td>{{ bid.bid2 }}</td>
+            <td>{{ bid.bid3 }}</td>
+        </tr>
+    </table>
+</div>
+<button onclick="window.location.href='/result'">End Bid</button>
